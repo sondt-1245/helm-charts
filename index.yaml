@@ -1,374 +1,111 @@
 apiVersion: v1
 entries:
-  beanstalkd:
-  - apiVersion: v2
-    created: "2022-03-07T21:27:29.495572717Z"
-    description: Beanstalkd. A simple, fast work queue.
-    digest: e2d7550fb19f61dd3065637fe9c1c8ccb233c581de4ca03e1cf53a8ba26dcc09
-    name: beanstalkd
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/beanstalkd-0.1.0/beanstalkd-0.1.0.tgz
-    version: 0.1.0
   blackbox-monitoring:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-04-04T08:37:03.178923611Z"
+    created: "2022-11-24T04:20:20.723506671Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
+      version: 1.1.0
     - condition: prometheus.enabled
       name: prometheus
       repository: https://prometheus-community.github.io/helm-charts
-      version: 15.5.3
+      version: 15.16.1
     - alias: blackbox-exporter
       name: prometheus-blackbox-exporter
       repository: https://prometheus-community.github.io/helm-charts
-      version: 5.4.1
+      version: 7.1.2
     - condition: grafana.enabled
       name: grafana
       repository: https://grafana.github.io/helm-charts
-      version: 6.24.0
+      version: 6.43.0
     description: Blackbox monitoring with Prometheus, Alertmanager and Grafana
-    digest: d49ae29f42b7eb916fa0887fdccd5fd87bdfe7fba269c39b716d8808f118bbd4
+    digest: c3be970699e747f3f9817977b636be881d66e08ce82792272fe51801d99e707d
     name: blackbox-monitoring
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/blackbox-monitoring-0.1.0/blackbox-monitoring-0.1.0.tgz
-    version: 0.1.0
-  cert-manager-issuer:
-  - apiVersion: v2
-    created: "2022-03-07T21:27:29.639765607Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.4.3
-    description: Issuer for cert-manager
-    digest: 7ee1fc7bbaf6c8143d4053ddfde569dc9741b5432b12f82c7b5042e15714848a
-    name: cert-manager-issuer
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/cert-manager-issuer-0.1.0/cert-manager-issuer-0.1.0.tgz
-    version: 0.1.0
+    - https://github.com/sondt-1245/helm-charts/releases/download/blackbox-monitoring-0.1.1/blackbox-monitoring-0.1.1.tgz
+    version: 0.1.1
   common:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2022-07-05T09:22:22.913864648Z"
+    appVersion: 1.1.0
+    created: "2022-11-24T04:20:20.859961814Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
-      version: 1.16.0
+      version: 2.0.3
     description: A Library Helm Chart for grouping common logic
-    digest: 9f5d98e4245590ad57ef4f1d36070b70eb05ac35869f530f72e166d0ae7bb103
+    digest: 3d571d2658cd47d7dd2ccb5d395ea2ac70052f730f5b6036773524d2b52788e2
     name: common
     type: library
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/common-1.0.0/common-1.0.0.tgz
-    version: 1.0.0
-  - apiVersion: v2
-    appVersion: 0.2.0
-    created: "2022-03-07T20:41:26.259178979Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
-    description: A Library Helm Chart for grouping common logic
-    digest: 60ee10f31490658f6e5ab8d42cb194d331cad0cdbfebbb152691cf52d8b3070a
-    name: common
-    type: library
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/common-0.2.0/common-0.2.0.tgz
-    version: 0.2.0
-  db-backup:
-  - apiVersion: v2
-    appVersion: 0.2.0
-    created: "2022-03-07T21:27:29.762740366Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.3
-    description: Database backup cronjob
-    digest: ba0987c4b1460baa115b55ea6f5df0bea2e064ecc3dab1ffdf4338b5428285b7
-    name: db-backup
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/db-backup-0.2.0/db-backup-0.2.0.tgz
-    version: 0.2.0
+    - https://github.com/sondt-1245/helm-charts/releases/download/common-1.1.0/common-1.1.0.tgz
+    version: 1.1.0
   db-init:
   - apiVersion: v2
-    created: "2022-06-17T04:35:20.541314493Z"
+    created: "2022-11-24T04:20:20.989007171Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 1.13.0
     description: Init script to create multiple databases and users for MySQL/MariaDB
       and PostgreSQL
-    digest: 0950018ff3a8516b6d13bcc853ceb15f3b6dce844138234b03d4d3204b555da3
+    digest: b37cb1ddca94d08130e0b250a7dfa8ea5da3c294de6820b376853dba8527d0fe
     name: db-init
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/db-init-1.0.0/db-init-1.0.0.tgz
-    version: 1.0.0
-  - apiVersion: v2
-    created: "2022-04-24T11:53:49.309094689Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.13.0
-    description: Init script to create multiple databases and users for MySQL/MariaDB
-      and PostgreSQL
-    digest: dd14ab70f6d60a6f9d8de737f0d57bff3e38857fe87de930fcc07337a314bec5
-    name: db-init
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/db-init-0.2.0/db-init-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    created: "2022-03-07T21:27:29.915566009Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.4.2
-    description: Init script to create multiple databases and users for MySQL/MariaDB
-      and PostgreSQL
-    digest: 2ddf99d6a85451ca2cf4c5fc54d993a5fdb52847a034c198799e58190568436c
-    name: db-init
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/db-init-0.1.1/db-init-0.1.1.tgz
-    version: 0.1.1
+    - https://github.com/sondt-1245/helm-charts/releases/download/db-init-1.2.0/db-init-1.2.0.tgz
+    version: 1.2.0
   grafana-dashboards:
   - apiVersion: v2
-    appVersion: 0.1.0
-    created: "2022-03-07T21:27:30.059379497Z"
+    appVersion: 0.2.0
+    created: "2022-11-24T04:20:21.135790294Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
+      version: 2.0.3
     description: A collection of Grafana dashboards
-    digest: f4a8cc277978eefc4689b79f83d1b2e3953355dd115219c743bb0cadefb0e07b
+    digest: 6396d05b710f38ccfd7a1924edfc05b9aa33508e9b23ca231fe1ec4c811cbbb0
     name: grafana-dashboards
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/grafana-dashboards-0.1.0/grafana-dashboards-0.1.0.tgz
-    version: 0.1.0
-  image-pull-secret:
-  - apiVersion: v2
-    created: "2022-03-07T21:27:30.189733702Z"
-    dependencies:
-    - name: common
-      repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
-    description: Secret for pulling private docker images
-    digest: f409d825d724621a2b38158f9cc32e34c8e050b2f14e04a4407b077f0136d87b
-    name: image-pull-secret
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/image-pull-secret-0.1.0/image-pull-secret-0.1.0.tgz
-    version: 0.1.0
-  imaginary:
-  - apiVersion: v2
-    appVersion: 1.2.4
-    created: "2022-03-07T21:27:30.319992106Z"
-    dependencies:
-    - name: common
-      repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
-    description: Fast, simple, scalable, Docker-ready HTTP microservice for high-level
-      image processing
-    digest: 53cff83781da12e5653cfd2e58639caa3e2c19dc8876d2f559b80880236b207e
-    name: imaginary
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/imaginary-0.2.0/imaginary-0.2.0.tgz
+    - https://github.com/sondt-1245/helm-charts/releases/download/grafana-dashboards-0.2.0/grafana-dashboards-0.2.0.tgz
     version: 0.2.0
-  laravel-echo-server:
+  mailcatcher:
   - apiVersion: v2
-    appVersion: 1.6.2
-    created: "2022-06-22T08:47:06.350730807Z"
+    created: "2022-11-24T04:20:21.261633257Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
       version: 0.2.0
-    description: Laravel Echo server
-    digest: d267cb7329d824afa36f35eba7cbb91a1493ce001ed8ed52650e3d88ae7fb141
-    name: laravel-echo-server
+    description: A Helm chart for Mailcatcher
+    digest: db47a4e3216cccbdcfa30ec148c59e1e95ef3271aff3a9d2f972993e7eaddeea
+    name: mailcatcher
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/laravel-echo-server-3.0.0/laravel-echo-server-3.0.0.tgz
-    version: 3.0.0
-  - apiVersion: v2
-    appVersion: 1.6.2
-    created: "2022-03-07T21:27:30.466212809Z"
-    dependencies:
-    - name: common
-      repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
-    description: Laravel Echo server
-    digest: cf8081fa4d5f50bf52a50b929c50f226a993b5809b870b7198d69a9465d96188
-    name: laravel-echo-server
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/laravel-echo-server-2.1.1/laravel-echo-server-2.1.1.tgz
-    version: 2.1.1
+    - https://github.com/sondt-1245/helm-charts/releases/download/mailcatcher-0.1.0/mailcatcher-0.1.0.tgz
+    version: 0.1.0
   metabase:
   - apiVersion: v2
-    appVersion: v0.43.3
-    created: "2022-06-16T06:23:33.519849337Z"
+    appVersion: v0.44.6
+    created: "2022-11-24T04:20:21.399364898Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
+      version: 2.0.3
     description: The simplest, fastest way to get business intelligence and analytics
       to everyone in your company.
-    digest: 507f3e1506ffcd1792b78b5fbe9593adfe0d3b8ee1bf8cb716852753aae65ac2
+    digest: b9aa50aa47d882a328fd689884b7da45a133937359ae3f0f0b85e63194b0af01
     name: metabase
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/metabase-0.2.0/metabase-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: v0.42.4
-    created: "2022-04-24T11:53:49.440647469Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
-    description: The simplest, fastest way to get business intelligence and analytics
-      to everyone in your company.
-    digest: 991b8fab91a6e05362f4d540e8c9b707f6c0711d428b7e585a69a766f939e904
-    name: metabase
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/metabase-0.1.4/metabase-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: v0.42.2
-    created: "2022-03-07T21:27:30.608363786Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
-    description: The simplest, fastest way to get business intelligence and analytics
-      to everyone in your company.
-    digest: e50dd9d6adcfb7009632a83d9883698b2be107504b0e3591b7afda6f0f00455c
-    name: metabase
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/metabase-0.1.3/metabase-0.1.3.tgz
-    version: 0.1.3
-  openedx:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-03-07T21:27:30.764035847Z"
-    dependencies:
-    - condition: minio.enabled
-      name: minio
-      repository: https://charts.bitnami.com/bitnami
-      version: 6.1.1
-    - condition: mongodb.enabled
-      name: mongodb
-      repository: https://charts.bitnami.com/bitnami
-      version: 10.6.1
-    - alias: mysql
-      condition: mysql.enabled
-      name: mariadb
-      repository: https://charts.bitnami.com/bitnami
-      version: 9.3.2
-    - condition: redis.enabled
-      name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 12.7.0
-    description: A Helm chart for Kubernetes
-    digest: 9c7ad8c7ca06654cffe73623881b0919ed52a55b4711a233c925a60ccc78dc5f
-    name: openedx
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/openedx-0.1.0/openedx-0.1.0.tgz
-    version: 0.1.0
-  rbac:
-  - apiVersion: v2
-    created: "2022-06-02T06:12:55.148742294Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.3
-    description: Service account to enable access from automated systems
-    digest: a33141640b801af50e4638fc2de5b2e379c941d28d1e12078c014654b00518d6
-    name: rbac
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/rbac-1.0.0/rbac-1.0.0.tgz
-    version: 1.0.0
-  redis-ha:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-04-24T11:53:49.570592123Z"
-    dependencies:
-    - name: common
-      repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
-    - name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 15.3.1
-    description: A Helm chart for Kubernetes
-    digest: b836b9c88c127393c144fa36365bc90f368ba2298f0ab6760f2019ef7d50b06e
-    name: redis-ha
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/redis-ha-0.2.0/redis-ha-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-03-07T21:27:30.89890478Z"
-    dependencies:
-    - name: common
-      repository: https://sun-asterisk-research.github.io/helm-charts
-      version: 0.2.0
-    - name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 15.3.1
-    description: A Helm chart for Kubernetes
-    digest: abc9c95606d2836237ade293189a207b986adc5ae407a59c59a1488cbec0a975
-    name: redis-ha
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/redis-ha-0.1.0/redis-ha-0.1.0.tgz
-    version: 0.1.0
-  remote-endpoint:
-  - apiVersion: v2
-    appVersion: 0.1.0
-    created: "2022-03-07T21:27:31.035801925Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.1
-    description: A simple service that point to custom endpoints
-    digest: a8147f07d068cbc0bd7f3b51d054789873f44373487b97180d7aaa7f8fb41df6
-    name: remote-endpoint
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/remote-endpoint-0.1.0/remote-endpoint-0.1.0.tgz
-    version: 0.1.0
-  service-account:
-  - apiVersion: v2
-    created: "2022-03-07T21:27:31.183756238Z"
-    dependencies:
-    - name: common
-      repository: https://charts.bitnami.com/bitnami
-      version: 1.11.3
-    description: Service account to enable access from automated systems
-    digest: 7b62a1fb2e1422f4222d4c7b867b4dfcce73ef1070ec4c6751bbd058ffad6890
-    name: service-account
-    type: application
-    urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/service-account-1.0.0/service-account-1.0.0.tgz
-    version: 1.0.0
+    - https://github.com/sondt-1245/helm-charts/releases/download/metabase-1.0.1/metabase-1.0.1.tgz
+    version: 1.0.1
   soketi:
   - apiVersion: v2
-    appVersion: 1.2.0
-    created: "2022-07-05T10:11:25.358965579Z"
+    appVersion: 1.4.0
+    created: "2022-11-24T04:20:21.577739362Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
@@ -382,10 +119,10 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 11.6.12
     description: Just another simple, fast, and resilient open-source WebSockets server.
-    digest: a223e349aaeec434c491528a213a6279589510e3b47b8fa6e1e9ff2cf56354d2
+    digest: 8d28960e57d7c6df816c1e12f898b2a03d481ef0deed823e008ac19349817aeb
     name: soketi
     type: application
     urls:
-    - https://github.com/sun-asterisk-research/helm-charts/releases/download/soketi-0.1.0/soketi-0.1.0.tgz
-    version: 0.1.0
-generated: "2022-07-05T10:11:25.35900288Z"
+    - https://github.com/sondt-1245/helm-charts/releases/download/soketi-0.2.0/soketi-0.2.0.tgz
+    version: 0.2.0
+generated: "2022-11-24T04:20:21.577752662Z"
