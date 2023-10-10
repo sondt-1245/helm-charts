@@ -3,7 +3,7 @@ entries:
   blackbox-monitoring:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-24T04:20:20.723506671Z"
+    created: "2023-10-10T02:40:56.31880683Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
@@ -21,22 +21,54 @@ entries:
       repository: https://grafana.github.io/helm-charts
       version: 6.43.0
     description: Blackbox monitoring with Prometheus, Alertmanager and Grafana
-    digest: c3be970699e747f3f9817977b636be881d66e08ce82792272fe51801d99e707d
+    digest: df7cdb1529314bd582f8ebd63b1540fd8edee79ca6ab0bcfbd2a87c9ae2d6f95
     name: blackbox-monitoring
     type: application
     urls:
     - https://github.com/sondt-1245/helm-charts/releases/download/blackbox-monitoring-0.1.1/blackbox-monitoring-0.1.1.tgz
     version: 0.1.1
+  codecov:
+  - apiVersion: v2
+    appVersion: v5.0.1
+    created: "2023-10-10T02:40:56.512268508Z"
+    dependencies:
+    - name: common
+      repository: https://sun-asterisk-research.github.io/helm-charts
+      version: 1.0.0
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.0.11
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.2
+    - alias: timescaledb
+      condition: timescaledb.enabled
+      name: timescaledb-single
+      repository: https://charts.timescale.com/
+      version: 0.33.*
+    - condition: minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.8.1
+    description: A Helm chart for Codecov
+    digest: a89d8e27ac2c0505fafe0c115ecd1c6eeda4d8a0c38a1811af80ab921d47f3bb
+    name: codecov
+    type: application
+    urls:
+    - https://github.com/sondt-1245/helm-charts/releases/download/codecov-0.1.1/codecov-0.1.1.tgz
+    version: 0.1.1
   common:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2022-11-24T04:20:20.859961814Z"
+    created: "2023-10-10T02:40:56.687069927Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 2.0.3
     description: A Library Helm Chart for grouping common logic
-    digest: 3d571d2658cd47d7dd2ccb5d395ea2ac70052f730f5b6036773524d2b52788e2
+    digest: 0430920e363163e9db0050feb44bff5583896d349f30c881c8539ef815c9cda3
     name: common
     type: library
     urls:
@@ -44,14 +76,14 @@ entries:
     version: 1.1.0
   db-init:
   - apiVersion: v2
-    created: "2022-11-24T04:20:20.989007171Z"
+    created: "2023-10-10T02:40:56.858433799Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 1.13.0
     description: Init script to create multiple databases and users for MySQL/MariaDB
       and PostgreSQL
-    digest: b37cb1ddca94d08130e0b250a7dfa8ea5da3c294de6820b376853dba8527d0fe
+    digest: 63dfd3aa49e48c72fd874dc1df6e257d9cf4666a4bd8ce7c9e6e17fafb398b4c
     name: db-init
     type: application
     urls:
@@ -60,13 +92,13 @@ entries:
   grafana-dashboards:
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2022-11-24T04:20:21.135790294Z"
+    created: "2023-10-10T02:40:57.018210711Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 2.0.3
     description: A collection of Grafana dashboards
-    digest: 6396d05b710f38ccfd7a1924edfc05b9aa33508e9b23ca231fe1ec4c811cbbb0
+    digest: 96d1b722ba51008646fdbb7f3b55a85333f4010b7c26bb24682a9a4fa13a0bb2
     name: grafana-dashboards
     type: application
     urls:
@@ -74,29 +106,29 @@ entries:
     version: 0.2.0
   mailcatcher:
   - apiVersion: v2
-    created: "2022-11-24T04:20:21.261633257Z"
+    created: "2023-10-10T02:40:57.189419681Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
       version: 0.2.0
     description: A Helm chart for Mailcatcher
-    digest: db47a4e3216cccbdcfa30ec148c59e1e95ef3271aff3a9d2f972993e7eaddeea
+    digest: f85c21a05f29c328e7770ca345cdb24b882a0372b32bf5f264d7b1ff05018935
     name: mailcatcher
     type: application
     urls:
-    - https://github.com/sondt-1245/helm-charts/releases/download/mailcatcher-0.1.0/mailcatcher-0.1.0.tgz
-    version: 0.1.0
+    - https://github.com/sondt-1245/helm-charts/releases/download/mailcatcher-0.1.2/mailcatcher-0.1.2.tgz
+    version: 0.1.2
   metabase:
   - apiVersion: v2
     appVersion: v0.44.6
-    created: "2022-11-24T04:20:21.399364898Z"
+    created: "2023-10-10T02:40:57.368086354Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
       version: 2.0.3
     description: The simplest, fastest way to get business intelligence and analytics
       to everyone in your company.
-    digest: b9aa50aa47d882a328fd689884b7da45a133937359ae3f0f0b85e63194b0af01
+    digest: 6d1d349bbd8c8c8ea1361b143b96ab962dcaedd1fb55fd896e5e316a70300868
     name: metabase
     type: application
     urls:
@@ -105,7 +137,7 @@ entries:
   soketi:
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2022-11-24T04:20:21.577739362Z"
+    created: "2023-10-10T02:40:57.558159885Z"
     dependencies:
     - name: common
       repository: https://sun-asterisk-research.github.io/helm-charts
@@ -119,10 +151,10 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 11.6.12
     description: Just another simple, fast, and resilient open-source WebSockets server.
-    digest: 8d28960e57d7c6df816c1e12f898b2a03d481ef0deed823e008ac19349817aeb
+    digest: da70889cc44eb7c211713b3160a9535c3313c89e186574db50f3822eefc65b8d
     name: soketi
     type: application
     urls:
-    - https://github.com/sondt-1245/helm-charts/releases/download/soketi-0.2.0/soketi-0.2.0.tgz
-    version: 0.2.0
-generated: "2022-11-24T04:20:21.577752662Z"
+    - https://github.com/sondt-1245/helm-charts/releases/download/soketi-0.2.2/soketi-0.2.2.tgz
+    version: 0.2.2
+generated: "2023-10-10T02:40:57.558173185Z"
